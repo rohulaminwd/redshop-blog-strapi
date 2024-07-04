@@ -807,6 +807,7 @@ export interface ApiAuthorAuthor extends Schema.CollectionType {
       'oneToMany',
       'api::blog.blog'
     >;
+    email: Attribute.Email & Attribute.Required & Attribute.Unique;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -842,7 +843,6 @@ export interface ApiBlogBlog extends Schema.CollectionType {
     content: Attribute.Blocks & Attribute.Required;
     slug: Attribute.UID<'api::blog.blog', 'title'> & Attribute.Required;
     description: Attribute.String & Attribute.Required;
-    excerpt: Attribute.RichText;
     author: Attribute.Relation<
       'api::blog.blog',
       'manyToOne',

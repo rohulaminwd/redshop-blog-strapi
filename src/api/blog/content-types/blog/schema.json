@@ -38,9 +38,6 @@
       "type": "string",
       "required": true
     },
-    "excerpt": {
-      "type": "richtext"
-    },
     "author": {
       "type": "relation",
       "relation": "manyToOne",
